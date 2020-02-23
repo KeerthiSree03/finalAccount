@@ -18,5 +18,6 @@ public interface AccountService {
 	public boolean validateGender(String accountGender)throws AccountException;
 	public boolean validateDate(String accountDate)throws AccountException;
 	public boolean validatePin(String pin) throws AccountException;
+	public boolean validateAccountNumber(String pin) throws AccountException;
 
 }

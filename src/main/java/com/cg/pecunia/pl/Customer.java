@@ -158,13 +158,20 @@ public class Customer {
 					System.out.println("update account details");
 					System.out.println("enter account number");
 					String acc = sc.next();
+					if (!accountService.validateAccountNumber(acc))
+						throw new AccountException("Account number should be of 12 digits");			
+					
 					account = accountService.findAccount(acc);
 					System.out.println("update contact");
 					String contact = sc.next();
+					if (!accountService.validateContact(contact))
+						throw new AccountException("Customer contact (10 digit number)");
+					
 					account.setAccountContact(contact);
 					System.out.println("update address");
 					System.out.println("update house no:");
 					String hno = sc.next();
+					
 					address.setCity(hno);
 					System.out.println("update city");
 					String city = sc.next();

@@ -103,5 +103,10 @@ public class AccountServiceImp implements AccountService{
 		
 		return pin.matches("[0-9]{6}");
 	}
+	@Override
+	public boolean validateAccountNumber(String accountNumber) throws AccountException {
+		
+		return accountNumber.matches("[0-9]{12}");
+	}
 
 }
